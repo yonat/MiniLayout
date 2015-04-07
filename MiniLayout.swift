@@ -33,7 +33,8 @@ extension UIView
     /// constrain(textField, at: .Top, to: label, at: .Bottom, diff: 8)
     func constrain(subview: UIView, at: NSLayoutAttribute, to subview2: UIView, at at2: NSLayoutAttribute = .NotAnAttribute, diff: CGFloat = 0, ratio: CGFloat = 1, relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint
     {
-        let constraint = NSLayoutConstraint(item: subview, attribute: at, relatedBy: relation, toItem: subview2, attribute: at2, multiplier: ratio, constant: diff)
+        let at2real = at2 == .NotAnAttribute ? at : at2
+        let constraint = NSLayoutConstraint(item: subview, attribute: at, relatedBy: relation, toItem: subview2, attribute: at2real, multiplier: ratio, constant: diff)
         addConstraint(constraint)
         return constraint
     }
