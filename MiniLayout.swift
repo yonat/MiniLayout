@@ -1,3 +1,11 @@
+//
+//  MiniLayout.swift
+//  Minimal AutoLayout convenience layer. Program constraints succinctly.
+//
+//  Created by Yonat Sharon on 06.04.2015.
+//  Copyright (c) 2015 Yonat Sharon. All rights reserved.
+//
+
 import UIKit
 
 extension UIView {
