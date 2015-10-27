@@ -42,7 +42,7 @@ extension UIView
     /// Add subview pinned to specific places. Example: addConstrainedSubview(button, constrain: .CenterX, .CenterY)
     func addConstrainedSubview(subview: UIView, constrain: NSLayoutAttribute...) -> [NSLayoutConstraint]
     {
-        subview.setTranslatesAutoresizingMaskIntoConstraints(false)
+        subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
         return constrain.map { self.constrain(subview, at: $0) }
     }
