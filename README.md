@@ -39,3 +39,10 @@ Using CocoaPods:
 ```ruby
 pod 'MiniLayout'
 ```
+
+For legacy Swift 2.3:
+
+```ruby
+pod 'MiniLayout', '~> 1.0.1'
+```
+
