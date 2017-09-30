@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MiniLayout"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "Minimal AutoLayout convenience layer. Program constraints succinctly."
 
   s.description  = <<-DESC
