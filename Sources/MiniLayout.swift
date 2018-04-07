@@ -14,7 +14,7 @@ public extension UIView
     @discardableResult public func constrain(_ at: NSLayoutAttribute, to: CGFloat = 0, ratio: CGFloat = 1, relation: NSLayoutRelation = .equal) -> NSLayoutConstraint
     {
         let constraint = NSLayoutConstraint(item: self, attribute: at, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: ratio, constant: to)
-        addConstraint(constraint)
+        addConstraintWithoutConflict(constraint)
         return constraint
     }
 
@@ -22,7 +22,7 @@ public extension UIView
     @discardableResult public func constrain(_ subview: UIView, at: NSLayoutAttribute, diff: CGFloat = 0, ratio: CGFloat = 1, relation: NSLayoutRelation = .equal) -> NSLayoutConstraint
     {
         let constraint = NSLayoutConstraint(item: subview, attribute: at, relatedBy: relation, toItem: self, attribute: at, multiplier: ratio, constant: diff)
-        addConstraint(constraint)
+        addConstraintWithoutConflict(constraint)
         return constraint
     }
 
@@ -35,7 +35,7 @@ public extension UIView
     {
         let at2real = at2 == .notAnAttribute ? at : at2
         let constraint = NSLayoutConstraint(item: subview, attribute: at, relatedBy: relation, toItem: subview2, attribute: at2real, multiplier: ratio, constant: diff)
-        addConstraint(constraint)
+        addConstraintWithoutConflict(constraint)
         return constraint
     }
 
@@ -45,5 +45,16 @@ public extension UIView
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
         return constrain.map { self.constrain(subview, at: $0) }
+    }
+
+    func addConstraintWithoutConflict(_ constraint: NSLayoutConstraint)
+    {
+        removeConstraints( constraints.filter {
+            constraint.firstItem === $0.firstItem
+                && constraint.secondItem === $0.secondItem
+                && constraint.firstAttribute == $0.firstAttribute
+                && constraint.secondAttribute == $0.secondAttribute
+        })
+        addConstraint(constraint)
     }
 }
