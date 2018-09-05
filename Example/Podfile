@@ -1,0 +1,5 @@
+use_frameworks!
+pod 'MiniLayout', :path => '..'
+
+target 'MiniLayoutDemo' do
+end

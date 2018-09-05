@@ -36,12 +36,11 @@ view.addConstraint( NSLayoutConstraint(item: button, attribute: .CenterX, relate
 view.addConstraint( NSLayoutConstraint(item: button, attribute: .CenterY, relatedBy: Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0) )
 ```
 
-## Requirements
-
-- iOS 8.0+
-- Xcode 7.3
-
 ## Installation
+
+Manually:
+
+Add `MiniLayout.swift` to your project.
 
 Using CocoaPods:
 
@@ -49,15 +48,13 @@ Using CocoaPods:
 pod 'MiniLayout'
 ```
 
-For legacy Swift 2.3:
+Legacy versions:
 
-```ruby
-pod 'MiniLayout', '~> 1.0.1'
-```
-
-Manually:
-
-Add `MiniLayout.swift` to your project.
+| Swift version | MiniLayout version |
+| :---: | :---: |
+| 4.0 | 1.2.1 |
+| 3 | 1.1.0 |
+| 2.3 | 1.0.1 |
 
 ## Meta
 

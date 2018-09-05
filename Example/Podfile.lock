@@ -1,0 +1,16 @@
+PODS:
+  - MiniLayout (1.1.0)
+
+DEPENDENCIES:
+  - MiniLayout (from `..`)
+
+EXTERNAL SOURCES:
+  MiniLayout:
+    :path: ..
+
+SPEC CHECKSUMS:
+  MiniLayout: f369b4d4273a3eebb61aa5cd735199fc9de2c1ca
+
+PODFILE CHECKSUM: 5eb2da08214be9ab0794606a6ad9db42dfec3668
+
+COCOAPODS: 1.2.1
