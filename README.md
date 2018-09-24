@@ -52,9 +52,9 @@ Legacy versions:
 
 | Swift version | MiniLayout version |
 | :---: | :---: |
-| 4.0 | 1.2.1 |
-| 3 | 1.1.0 |
-| 2.3 | 1.0.1 |
+| 4.0 (Xcode 9.4) | `pod 'MiniLayout', '~> 1.2.1'` |
+| 3 | `pod 'MiniLayout', '~> 1.1.0'` |
+| 2.3 | `pod 'MiniLayout', '~> 1.0.1'` |
 
 ## Meta
 
@@ -62,7 +62,7 @@ Legacy versions:
 
 [https://github.com/yonat/MiniLayout](https://github.com/yonat/MiniLayout)
 
-[swift-image]:https://img.shields.io/badge/swift-4.1-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-4.2-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE.txt
