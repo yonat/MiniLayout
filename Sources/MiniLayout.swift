@@ -37,9 +37,13 @@ public extension UIView {
 
     /// Add subview pinned to specific places. Example: addConstrainedSubview(button, constrain: .CenterX, .CenterY)
     @discardableResult public func addConstrainedSubview(_ subview: UIView, constrain: NSLayoutConstraint.Attribute...) -> [NSLayoutConstraint] {
+        return addConstrainedSubview(subview, constrainedAttributes: constrain)
+    }
+
+    @discardableResult func addConstrainedSubview(_ subview: UIView, constrainedAttributes: [NSLayoutConstraint.Attribute]) -> [NSLayoutConstraint] {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
-        return constrain.map { self.constrain(subview, at: $0) }
+        return constrainedAttributes.map { self.constrain(subview, at: $0) }
     }
 
     func addConstraintWithoutConflict(_ constraint: NSLayoutConstraint) {
@@ -50,5 +54,15 @@ public extension UIView {
                 && constraint.secondAttribute == $0.secondAttribute
         })
         addConstraint(constraint)
+    }
+}
+
+public extension UIViewController {
+    /// Add child view controller pinned to specific places.
+    /// Example: addConstrainedChild(pages, constrain: .bottomMargin, .top, .left, .right)
+    public func addConstrainedChild(_ viewController: UIViewController, constrain: NSLayoutConstraint.Attribute...) {
+        addChild(viewController)
+        view.addConstrainedSubview(viewController.view, constrainedAttributes: constrain)
+        viewController.didMove(toParent: self)
     }
 }

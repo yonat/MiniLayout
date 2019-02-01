@@ -15,25 +15,43 @@ Minimal AutoLayout convenience layer. Program constraints succinctly.
 
 ```swift
 // using MiniLayout:
-view.constrain(label, at: .Leading, to: textField)
-view.constrain(textField, at: .Top, to: label, at: .Bottom, diff: 8)
+view.constrain(label, at: .leading, to: textField)
+view.constrain(textField, at: .top, to: label, at: .bottom, diff: 8)
  
 // without MiniLayout:
-view.addConstraint( NSLayoutConstraint(item: label, attribute: .Leading, relatedBy: Equal, toItem: textField, attribute: .Leading, multiplier: 1, constant: 0) )
-view.addConstraint( NSLayoutConstraint(item: textField, attribute: .Top, relatedBy: Equal, toItem: label, attribute: .Bottom, multiplier: 1, constant: 8) )
+view.addConstraint( NSLayoutConstraint(item: label, attribute: .leading, relatedBy: .equal, toItem: textField, attribute: .leading, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: textField, attribute: .top, relatedBy: .equal, toItem: label, attribute: .bottom, multiplier: 1, constant: 8) )
 ```
 
 ### Add button at the center of view
 
 ```swift
 // using MiniLayout:
-view.addConstrainedSubview(button, constrain: .CenterX, .CenterY)
+view.addConstrainedSubview(button, constrain: .centerX, .centerY)
  
 // without MiniLayout:
 view.addSubview(button)
 button.setTranslatesAutoresizingMaskIntoConstraints(false)
-view.addConstraint( NSLayoutConstraint(item: button, attribute: .CenterX, relatedBy: Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0) )
-view.addConstraint( NSLayoutConstraint(item: button, attribute: .CenterY, relatedBy: Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: button, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: button, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0) )
+```
+
+### Add child view controller covering all but the bottom margin
+
+```swift
+// using MiniLayout:
+addConstrainedChild(vc, constrain: .bottomMargin, .top, .left, .right)
+ 
+// without MiniLayout:
+addChild(vc)
+view.addSubview(vc.view)
+vc.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+view.addConstraint( NSLayoutConstraint(item: vc.view, attribute: .bottomMargin, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: vc.view, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: vc.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0) )
+view.addConstraint( NSLayoutConstraint(item: vc.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0) )
+vc.didMove(toParent: self)
+
 ```
 
 ## Installation
