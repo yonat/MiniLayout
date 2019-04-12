@@ -2,15 +2,15 @@
 Pod::Spec.new do |s|
 
   s.name         = "MiniLayout"
-  s.version      = "1.4.0"
+  s.version      = "1.4.1"
   s.summary      = "Minimal AutoLayout convenience layer. Program constraints succinctly."
 
   s.description  = <<-DESC
 Usage:
 
 ```swift
-view.addConstrainedSubview(label, constrain: .Leading, .Top)
-view.constrain(textField, at: .Leading, to: label, at: .Trailing, diff: 8)
+view.addConstrainedSubview(label, constrain: .leading, .top)
+view.constrain(textField, at: .leading, to: label, at: .trailing, diff: 8)
 ```
                    DESC
 
@@ -22,7 +22,7 @@ view.constrain(textField, at: .Leading, to: label, at: .Trailing, diff: 8)
   s.social_media_url   = "http://twitter.com/yonatsharon"
 
   s.swift_version = '4.2'
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
   s.requires_arc = true
 
   s.source       = { :git => "https://github.com/yonat/MiniLayout.git", :tag => s.version }

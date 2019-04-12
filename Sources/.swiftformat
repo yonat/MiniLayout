@@ -1,0 +1,6 @@
+--exclude Pods
+--commas always
+--comments ignore
+--self init-only
+--ifdef no-indent
+--disable unusedArguments, andOperator, ranges, hoistPatternLet, blankLinesAtStartOfScope, blankLinesAroundMark, emptyBraces, yodaConditions, anyObjectProtocol

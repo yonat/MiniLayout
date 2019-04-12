@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     /// Set constant attribute. Example: constrain(.Width, to: 17)
     @discardableResult public func constrain(_ at: NSLayoutConstraint.Attribute, to: CGFloat = 0, ratio: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: self, attribute: at, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: ratio, constant: to)
@@ -57,7 +57,7 @@ public extension UIView {
     }
 }
 
-public extension UIViewController {
+extension UIViewController {
     /// Add child view controller pinned to specific places.
     /// Example: addConstrainedChild(pages, constrain: .bottomMargin, .top, .left, .right)
     public func addConstrainedChild(_ viewController: UIViewController, constrain: NSLayoutConstraint.Attribute...) {

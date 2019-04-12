@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2AC7389A76BE8AAC1560F297 /* Pods_MiniLayoutDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013259E10CA2FEBE01C51F05 /* Pods_MiniLayoutDemo.framework */; };
+		DC134CD922601C03006693CC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC134CD722601C03006693CC /* README.md */; };
+		DC134CDA22601C03006693CC /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = DC134CD822601C03006693CC /* CHANGELOG.md */; };
 		DC6803181DE4D7220071F990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6803171DE4D7220071F990 /* AppDelegate.swift */; };
 		DC68031A1DE4D7220071F990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6803191DE4D7220071F990 /* ViewController.swift */; };
 		DC68031D1DE4D7220071F990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC68031B1DE4D7220071F990 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		013259E10CA2FEBE01C51F05 /* Pods_MiniLayoutDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniLayoutDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6CA45AB6B32189621CC7D /* Pods-MiniLayoutDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniLayoutDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniLayoutDemo/Pods-MiniLayoutDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DC134CD722601C03006693CC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DC134CD822601C03006693CC /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		DC6803141DE4D7220071F990 /* MiniLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6803171DE4D7220071F990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC6803191DE4D7220071F990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		DC68030B1DE4D7220071F990 = {
 			isa = PBXGroup;
 			children = (
+				DC134CD722601C03006693CC /* README.md */,
+				DC134CD822601C03006693CC /* CHANGELOG.md */,
 				DC6803161DE4D7220071F990 /* MiniLayoutDemo */,
 				DC6803151DE4D7220071F990 /* Products */,
 				F6EADC546543585570DBB7FB /* Pods */,
@@ -101,7 +107,6 @@
 				DC6803111DE4D7220071F990 /* Frameworks */,
 				DC6803121DE4D7220071F990 /* Resources */,
 				E7FD2974A9C6235D593CBED1 /* [CP] Embed Pods Frameworks */,
-				26015BD5636095C1F2CE27ED /* [CP] Copy Pods Resources */,
 				DC9DD87520B0AF43007E16DD /* ShellScript */,
 			);
 			buildRules = (
@@ -135,6 +140,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -154,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6803221DE4D7220071F990 /* LaunchScreen.storyboard in Resources */,
+				DC134CDA22601C03006693CC /* CHANGELOG.md in Resources */,
 				DC68031F1DE4D7220071F990 /* Assets.xcassets in Resources */,
+				DC134CD922601C03006693CC /* README.md in Resources */,
 				DC68031D1DE4D7220071F990 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,34 +170,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26015BD5636095C1F2CE27ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniLayoutDemo/Pods-MiniLayoutDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BF0A2F13E75DD34B7023092C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniLayoutDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC9DD87420B0AF32007E16DD /* ShellScript */ = {
@@ -203,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\nswiftformat --stripunusedargs unnamed-only \"${SRCROOT}/../Sources\"\nswiftformat --stripunusedargs unnamed-only \"${SRCROOT}\"\nfi\n";
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat --swiftversion ${SWIFT_VERSION} \"${SRCROOT}/../Sources\"\nswiftformat --swiftversion ${SWIFT_VERSION} \"${SRCROOT}\"\nfi\n";
 		};
 		DC9DD87520B0AF43007E16DD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -224,13 +220,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniLayoutDemo/Pods-MiniLayoutDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MiniLayout/MiniLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MiniLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniLayoutDemo/Pods-MiniLayoutDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiniLayoutDemo/Pods-MiniLayoutDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -316,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -370,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
