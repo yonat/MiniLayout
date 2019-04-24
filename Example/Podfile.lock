@@ -1,16 +1,37 @@
 PODS:
   - MiniLayout (1.4.1)
+  - SwiftFormat/CLI (0.40.8)
+  - SwiftLint (0.31.0)
+  - SwiftQuality (1.0.0):
+    - SwiftFormat/CLI (= 0.40.8)
+    - SwiftLint (= 0.31.0)
 
 DEPENDENCIES:
   - MiniLayout (from `..`)
+  - SwiftQuality (from `https://github.com/yonat/SwiftQuality`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftFormat
+    - SwiftLint
 
 EXTERNAL SOURCES:
   MiniLayout:
     :path: ".."
+  SwiftQuality:
+    :git: https://github.com/yonat/SwiftQuality
+
+CHECKOUT OPTIONS:
+  SwiftQuality:
+    :commit: e08572a726ab3178041bf37966db7dce8900c1d2
+    :git: https://github.com/yonat/SwiftQuality
 
 SPEC CHECKSUMS:
   MiniLayout: bd42e3763700c3002f39ff3b36dc8a027ea5078a
+  SwiftFormat: d9e5ca1aed735164fe9d26510ec508ddb8a93598
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftQuality: 7e8e9783387fc64d0ad6f8a315507c9c0013dee8
 
-PODFILE CHECKSUM: 5eb2da08214be9ab0794606a6ad9db42dfec3668
+PODFILE CHECKSUM: 931d33698d564abd6d052585a9798bb4eed8370e
 
 COCOAPODS: 1.6.1
