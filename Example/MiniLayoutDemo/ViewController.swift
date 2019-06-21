@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         cyanView.backgroundColor = .cyan
         view.addConstrainedSubview(cyanView, constrain: .topMargin, .bottomMargin, .leadingMargin, .trailingMargin)
 
+        // swiftlint:disable numbers_smell
         let blueView = UIView()
         blueView.backgroundColor = .blue
         view.addConstrainedSubview(blueView, constrain: .centerX)
@@ -27,5 +28,6 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.view.constrain(blueView, at: .bottom, to: cyanView, at: .bottom, diff: -64)
         }
+        // swiftlint:enable numbers_smell
     }
 }

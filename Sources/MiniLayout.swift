@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIView {
+    // swiftlint:disable identifier_name line_length
+
     /// Set constant attribute. Example: constrain(.Width, to: 17)
     @discardableResult public func constrain(_ at: NSLayoutConstraint.Attribute, to: CGFloat = 0, ratio: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: self, attribute: at, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: ratio, constant: to)
@@ -55,6 +57,8 @@ extension UIView {
         })
         addConstraint(constraint)
     }
+
+    // swiftlint:enable identifier_name line_length
 }
 
 extension UIViewController {
